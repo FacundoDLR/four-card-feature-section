@@ -169,8 +169,14 @@ h2 {
     .title {
         font-size: 2.25rem;
     }
-    .title-description {
-        padding: 0 24rem;
+    .hgroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        & p {
+            width: 65ch;
+        }
     }
 
     .container {
@@ -193,6 +199,10 @@ h2 {
         }
         & .card:nth-child(4){
             grid-area: calculator;
+        }
+
+        & .card::before{
+            height: 8px
         }
     }
 }
