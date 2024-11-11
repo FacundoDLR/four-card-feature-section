@@ -1,20 +1,100 @@
+/* ================ CSS Reset ================ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================ CSS Variables ================ */
+:root {
+  /* VARIABLES DE FUENTE */
+  --font-family-body: "Poppins", sans-serif;
+
+  /* TIPOGRAFÍA */
+  --font-size-heading: 1.5rem;
+  --font-size-card-title: 1.25rem;
+  --font-size-card-description: 0.8rem;
+  --font-size-heading-description: 0.938rem;
+
+  --font-weight-bold: 600;
+  --font-weight-regular: 400;
+  --font-weight-light: 200;
+
+  --line-height: 1.5;
+  --letter-spacing-large: 0.007rem;
+  --letter-spacing-normal: 0.01rem;
+  --letter-spacing-regular: 0.06rem;
+
+  /* COLOR */
+
+  /* Primary */
+
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+
+  /* SPACING */
+  --spacing400: 2rem;
+  --spacing300: 1.5rem;
+  --spacing200: 1rem;
+  --spacing150: 0.75rem;
+  --spacing100: 0.5rem;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
-}
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+  font-family: var(--font-family-body);
+  color: var(--Very-Dark-Blue);
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Text Presets */
+
+.title {
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+.title-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.title-description {
+  text-align: center;
+  font-size: var(--font-size-heading-description);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing-regular);
+  opacity: 0.5;
+}
+
+.card-title {
+  font-size: var(--font-size-card-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.card-description {
+  font-size: var(--font-size-card-description);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing-normal);
+  opacity: 0.5;
+}
+
+.attribution {
+  display: none;
+  font-size: 11px;
+  text-align: center;
+
+  & a {
+    color: hsl(228, 45%, 44%);
+  }
 }
