@@ -63,7 +63,7 @@ body {
 
 .title {
   font-size: var(--font-size-heading);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-light);
   letter-spacing: var(--letter-spacing-normal);
 }
 
@@ -95,7 +95,8 @@ body {
 }
 
 main {
-  min-width: 22rem;
+  width: 100%;
+  max-width: 475px;
   padding: 5.625rem 2rem 4.875rem;
 }
 
@@ -107,10 +108,11 @@ h2 {
 .container {
   display: grid;
   gap: var(--spacing300);
+  justify-content: center;
 
   & .card {
     position: relative;
-    width: 100%;
+    max-width: 21.875rem;
     min-height: 13.875rem;
     border-radius: var(--spacing100);
     background-color: white;
@@ -144,13 +146,10 @@ h2 {
     background-color: var(--Blue);
   }
 
-  & .card__summary {
-    padding-inline-end: 3rem;
-  }
-
-  & .card__imgContainer {
-    display: flex;
-    flex-direction: row-reverse;
+  & img {
+    align-self: end;
+    width: 57px;
+    height: 57px;
   }
 }
 
@@ -165,28 +164,50 @@ h2 {
 }
 
 /* =========== RESPONSIVE CSS =========== */
+@media (50rem <= width < 60rem){
+  .container {
+    grid-template-columns: repeat(2, 350px);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        'supervisor team'
+        'karma calculator';
+        place-content: center;
+        align-items: center;
+
+        & .card:nth-child(1){
+            grid-area: supervisor;
+        };
+        & .card:nth-child(2){
+                grid-area: team;
+        }
+        & .card:nth-child(3){
+            grid-area: karma;
+        }
+        & .card:nth-child(4){
+            grid-area: calculator;
+        }
+  }
+}
 @media (60rem <= width) {
     .title {
         font-size: 2.25rem;
     }
-    .hgroup {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        & p {
-            width: 65ch;
-        }
+    main {
+      max-width: 1280px;
+    }
+    header {
+        max-width: 540px;
+        margin: 0 auto;
     }
 
     .container {
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 350px);
+        grid-template-rows: repeat(2, 1fr);
         grid-template-areas: 
-        '. . . team team . . .'
-        '. supervisor supervisor team team calculator calculator .'
-        '. supervisor supervisor karma karma calculator calculator .'
-        '. . . karma karma . . .';
+        'supervisor team calculator'
+        'supervisor karma calculator';
+        place-content: center;
+        align-items: center;
 
         & .card:nth-child(1){
             grid-area: supervisor;
